@@ -6,6 +6,7 @@ public  class MoldeLutadores implements Lutadores {
     private double altura;
     private categoriaDoLutador categoria; 
     private HistoricoDeResultados resultados; 
+    private Luta lutas; 
     private int peso; 
     
     public MoldeLutadores (String nome, String nacionalidade, int idade, double altura, int peso) {
@@ -46,6 +47,18 @@ public  class MoldeLutadores implements Lutadores {
     public void perderLuta() {
         resultados.adicionarDerrota();
     }
+
+     @Override
+    public String categoria() {
+         System.out.println("Categoria:" + categoria.getCategoria());
+         return categoria.getCategoria(); 
+    }
+
     
     
+    @Override 
+    public void marcarLuta() {
+        lutas.lutar(this, this);
+    }
 }
+        
