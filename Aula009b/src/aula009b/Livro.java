@@ -9,10 +9,11 @@ public class Livro implements Publicar {
     private boolean aberto; 
     private Pessoa leitor;
 
-    public Livro(String tituloDoLivro, Pessoa autorDoLivro, int totalDePaginas) {
+    public Livro(String tituloDoLivro, Pessoa autorDoLivro, int totalDePaginas, Pessoa leitor) {
         this.tituloDoLivro = tituloDoLivro;
         this.autorDoLivro = autorDoLivro;
         this.totalDePaginas = totalDePaginas;
+        this.leitor = leitor; 
     }
 
     public boolean isAberto() {
@@ -38,12 +39,7 @@ public class Livro implements Publicar {
     public void setTotalDePaginas(int totalDePaginas) {
         this.totalDePaginas = totalDePaginas;
     }
-    
-
-    public void detalhes() {
-    
-    }
-
+   
     @Override
     public void abrir() {
         setAberto(true);
@@ -72,5 +68,10 @@ public class Livro implements Publicar {
     @Override
     public void voltarPag() {
        setPaginaAtual(paginaAtual -= 1);
+    }
+    
+    @Override
+    public String detalhes() {
+            return "Livro: " + tituloDoLivro + " autor: " + autorDoLivro.getNome() + " quantidade de paginas: " + totalDePaginas + " pagina atual: " + " leitor: " + leitor.getNome(); 
     }
 }

@@ -7,4 +7,5 @@ public interface Publicar {
     public abstract void folhear(int p); 
     public abstract  void avançarPag(); 
     public abstract void voltarPag(); 
+    public String detalhes(); 
 }
